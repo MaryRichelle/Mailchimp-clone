@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 100;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+a {
+  color: #006570;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+.describedby-close-btn {
+  width: 25px;
+  background: tomato;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  align-self: flex-end;
+}
+main {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  border-left: 10px solid #ffe01b;
+}
+article {
+  flex-grow: 2;
+  height: 100%;
+}
+h1 {
+  font-family: "Means Web", Georgia, Times, "Times New";
+  text-transform: none;
+  font-weight: 100;
+  font-size: 32px;
+}
+section {
+  max-width: 600px;
+  max-height: 100vh;
+
+  margin: 0 auto 48px auto;
+  font-family: "Graphik Web", "Helvetica Neue", Helvetica, Arial, Verdana,
+    sans-serif;
+}
+
+.mailChimpLogo {
+  max-width: 30px;
+  margin: 2%;
+}
+.form-label {
+  padding: 10px 0;
+  font-size: large;
+  font-weight: 500;
+}
+#show {
+  float: right;
+  color: #006570;
+}
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 2px 0;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+.spacing-div {
+  margin: 4% 0;
+  font-size: small;
+
+  padding: 10px;
+}
+.checkbox-div {
+  display: flex;
+  width: 100%;
+}
+#checkbox {
+  width: 40px;
+  margin: 1%;
+}
+#privacy {
+  font-size: smaller;
+  color: rgb(52, 51, 51);
+}
+button {
+  width: 30%;
+  padding: 10px;
+  font-weight: 800;
+  background-color: #006570;
+  border: 1px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+aside {
+  width: 30vw;
+  height: 120vh;
+  overflow: hidden;
+  background-image: linear-gradient(
+    to left,
+    #ffe01b 85%,
+    rgba(50, 50, 50, 0) 85%
+  );
+}
+aside::before {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  top: 10%;
+  background-image: url(./images/art-hero-flowers.png);
+  background-position: 0%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-position-x: 0%;
+}
+
+footer {
+
+  color: rgb(71, 69, 69);
+  font-size: 1rem;
+  font-family: "Graphik Web", "Helvetica Neue", Helvetica, Arial, Verdana;
+}
+footer a {
+  color: rgb(71, 69, 69);
+}
+@media screen and (max-width: 1024px) {
+  aside {
+    display: none;
+  }
+  button {
+    width: 100%;
+  }
+}
