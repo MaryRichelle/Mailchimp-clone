@@ -36,7 +36,7 @@ main {
   flex-direction: row;
   border-left: 10px solid #ffe01b;
 }
-article {
+#main-ui {
   flex-grow: 2;
   height: 100%;
 }

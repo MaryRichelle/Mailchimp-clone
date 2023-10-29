@@ -2,57 +2,61 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- <script src="https://unpkg.com/lodash@4.17.20"></script> -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="mail Chimp Clone ">
+  <meta name="description" content="mail Chimp Clone ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Mary Richelle">
+  <link rel="icon" href="./images/Mailchimp-logo.png" type="image/x-icon" />
+
+  <link rel="stylesheet" href="style.css">
 
   <title>Sign up for Mailchimp</title>
 </head>
 
 <body>
   <main>
-    <article>
+    <div id="main-ui">
       <header>
-        <a href=""><img src="./images/Mailchimp-logo.png" id="logo" alt="mailChimpLogo" class="mailChimpLogo" /></a>
+        <a href="https://maryrichelle.github.io/Mailchimp-clone/"><img src="./images/Mailchimp-logo.png" id="logo" alt="mail Chimp Logo" class="mailChimpLogo"></a>
         <button aria-describedby="description-close" class="describedby-close-btn" aria-label="close form"> X </button>
       </header>
       <section>
         <h1>Sign up for MailChimp</h1>
         <p>
           Create a free acount or
-          <a href="https://login.mailchimp.com/?" target="_blank"> log in</a>
+          <a href="https://login.mailchimp.com/?" target="_blank" rel="noopener noreferrer"> log in</a>
         </p>
-        <form action="">
+        <form action="#">
           <div class="spacing-div">
-            <label for="emailAdd" class="form-label" aria-labelledby="Email">Email</label>
+            <label for="emailAdd" class="form-label" aria-label="Email">Email</label>
             <input type="email" class="form-input" name="email" id="emailAdd" required
-              aria-labelledby="email-description" aria-describedby="email-description" />
+              aria-labelledby="email-description" aria-describedby="email-description">
             <span id="email-description" hidden>we will never share your email with anyone
             </span>
             <span class="required-field">
             </span>
           </div>
           <div class="spacing-div">
-            <label for="userName" class="form-label" aria-labelledby="User Name">Username</label>
+            <label for="userName" class="form-label" aria-label="User Name">Username</label>
             <input type="text" class="form-input" name="userName" id="userName" aria-labelledby="username-description"
-              aria-describedby="username-description" required />
+              aria-describedby="username-description" required>
             <span class="required-field"></span>
             <span id="username-description" hidden>we recommend using your email as username if you change it only
               number and
               letters are allowed</span>
           </div>
           <div class="spacing-div">
-            <label for="password" class="form-label">Password <span id="show">👁️ show</span>
+            <label for="password" class="form-label" aria-label>Password <span id="show">👁️ show</span>
             </label>
             <input type="password" class="form-input" name="password" id="password"
-              aria-labelledby="password-description" required />
+              aria-labelledby="password-description" required>
             <span class="required-field"> </span>
             <span id="password-description" hidden>use unique password combination of letters and numbers</span>
           </div>
           <div class="spacing-div checkbox-div">
-            <input type="checkbox" name="userAgreement" id="checkbox" />
+            <input type="checkbox" name="userAgreement" id="checkbox">
             <label for="checkbox">
               I don't want to receive emails about Mailchimp and related
               Intuit product and feature updates, marketing best practices,
@@ -62,10 +66,11 @@
           <div class="spacing-div">
             <p>
               By creating an account, you agree to our
-              <a
-                href="https://mailchimp.com/legal/terms/?_ga=2.67878040.809964678.1676783111-1707941708.1676321410">Terms</a>
+              <a href="https://mailchimp.com/legal/terms/?_ga=2.67878040.809964678.1676783111-1707941708.1676321410"
+                target="_blank" rel="noopener noreferrer">Terms</a>
               and have read and acknowledge the
-              <a href="https://www.intuit.com/privacy/statement/">Global Privacy Statement</a>.
+              <a href="https://www.intuit.com/privacy/statement/" target="_blank" rel="noopener noreferrer">Global
+                Privacy Statement</a>.
             </p>
           </div>
           <div class="spacing-div">
@@ -76,21 +81,24 @@
               return you back to the main page</small>
           </div>
         </form>
-        <p id="privacy">Invisible reCAPTCHA by Google <a href="http://"> Privacy Policy </a>and <a href="http://"
-            target="_blank" rel="noopener noreferrer">
+        <p id="privacy">Invisible reCAPTCHA by Google <a href="https://maryrichelle.github.io/Mailchimp-clone/"
+            target="_blank" rel="noopener noreferrer"> Privacy Policy </a>and <a
+            href="https://maryrichelle.github.io/Mailchimp-clone/" target="_blank" rel="noopener noreferrer">
             Terms
           </a> of Use.</p>
       </section>
-     
-    </article>
+
+    </div>
     <aside></aside>
   </main>
-<footer>
-  <p>
-    created by <a href="https://github.com/MaryRichelle">Mary Richelle</a> ,a copy of
-    <a style="color: rgb(63, 63, 63)" href="https://login.mailchimp.com/signup/">MailChip clone</a>
-  </p>
-</footer>
+  <footer>
+    <p>
+      created by <a href="https://github.com/MaryRichelle" target="_blank" rel="noopener noreferrer">Mary Richelle</a>
+      ,a copy of
+      <a style="color: rgb(63, 63, 63)" href="https://login.mailchimp.com/signup/" target="_blank"
+        rel="noopener noreferrer">MailChimp clone</a>
+    </p>
+  </footer>
   <script src="script.js"></script>
 </body>
 
