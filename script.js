@@ -1,45 +1,58 @@
-const emailAdd = document.getElementById("emailAdd");
-const userName = document.getElementById("userName");
-const password = document.getElementById("password");
-const requiredField = document.querySelectorAll(".required-field");
-const signUp = document.getElementById("signUp");
-function inputSpan(inputArea, text) {
-  inputArea.addEventListener("click", () => {
-    inputArea.style.border = "2px solid #006570";
-   
-      emailDescription.innerText = text;
-     });
-}
-inputSpan(emailAdd,  "An email address must contain a single @");
-inputSpan(
-  userName,
 
-  " enter a value"
-);
-inputSpan(password, "Pleas enter a value");
-signUp.addEventListener("click", () => {
-  console.log("yes");
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+window.addEventListener("DOMContentLoaded", () => {
+  const password = document.getElementById("password");
+  const requiredField = document.querySelectorAll(".required-field");
+  const email = document.getElementById("emailAdd");
+  const userName = document.getElementById("userName");
+  const signUp = document.getElementById("signUp");
+  const errorMessages = [
+    `<span>An email address must contain a single @</span>`,
+    `<span>Name with your email is suggested</span>`,
+    `<p> at least one uppercase letter</p>
+      <p>  at least one lowercase letter</p>
+      <p>  at least one digit</p>
+      <p>  8 alphanumeric characters</p>`
+  ]
 
-  if (emailAdd.value == "") {
-    emailAdd.style.border = "2px solid red";
-    requiredField[0].style.display = "inline-block";
-    requiredField[0].style.color = "red";
+  // input field Information upon clicking
+  function inputFieldInformation(inputArea, field, text) {
+    inputArea.addEventListener("click", () => {
+      inputArea.style.border = "2px solid #006570";
+      requiredField[field].innerHTML = text;
+    });
   }
 
-  if (userName.value == "") {
-    userName.style.border = "2px solid red";
-    requiredField[1].style.display = "inline-block";
-    requiredField[1].style.color = "red";
+  // style input field if error occur 
+  const errorStyle = (inputField, field, errorMessage = "Must contain value") => {
+    inputField.style.border = "2px solid red";
+    requiredField[field].style.display = "inline-block";
+    requiredField[field].style.color = "red";
+    requiredField[field].innerHTML = errorMessage;
   }
-  if (password !== passwordRegex) {
-    password.style.border = "2px solid red";
-    requiredField[2].style.display = "inline-block";
-    requiredField[2].style.color = "red";
-    requiredField[2].innerHTML = `<p>X at least one uppercase letter</p>
-      <p> X at least one lowercase letter</p>
-      <p> X at least one digit</p>
-      <p> X 8 alphanumeric characters</p>
-      `;
+
+  // error message when fields are empty
+  const validation = (inputField, fieldNumber) => {
+    if (!inputField.value) {
+      errorStyle(inputField, fieldNumber)
+
+    }
   }
-});
+
+  // validating password
+  const validatePassword = () => {
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+    if (!password.value && password.value !== passwordRegex) {
+      errorStyle(password, 2, errorMessages[2])
+    }
+  }
+
+  inputFieldInformation(email, 0, errorMessages[0]);
+  inputFieldInformation(userName, 1, errorMessages[1]);
+  inputFieldInformation(password, 2, errorMessages[2]);
+  signUp.addEventListener("click", () => {
+    validation(email, 0, errorMessages[0])
+    validation(userName, 1, errorMessages[1])
+    validatePassword();
+  });
+
+})

@@ -16,6 +16,7 @@ a {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .describedby-close-btn {
   width: 25px;
@@ -55,10 +56,7 @@ section {
     sans-serif;
 }
 
-.mailChimpLogo {
-  max-width: 30px;
-  margin: 2%;
-}
+
 .form-label {
   padding: 10px 0;
   font-size: large;
